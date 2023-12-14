@@ -32,10 +32,20 @@
             height: auto;
             border-radius: 10px;
             margin-top: 60px;
+            animation: floatAnimation 2s infinite alternate;
         }
         p {
             font-size: 20px;
             margin-top: 20px;
+        }
+        
+        @keyframes floatAnimation {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
