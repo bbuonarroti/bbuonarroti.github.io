@@ -32,7 +32,7 @@
             font-size: 20px;
             margin-top: 20px;
         }
-        .ofa_button1 {
+        .product-button {
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
@@ -45,7 +45,7 @@
             top: 80px;
             left: 10px;
         }
-        .ofa_button1:hover {
+        .product-button:hover {
             background-color: #ef1212;
         }
         @keyframes floatAnimation {
@@ -64,12 +64,20 @@
     </header>
     
     <main>
-        <button class="ofa_button1" onclick="window.location.href='shop.html'">Jetzt kaufen</button>
+        <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <img src="bilder/klarglas-mit-wasser.jpg" alt="Unendliches Glas mit Wasser">
         <p>
             Ein verzaubertes Glas, aus dem unendlich Wasser fließt – klar wie ein Diamant, stetig sprudelnd aus einer mysteriösen, endlosen Quelle. <br>
             Ein fesselndes Symbol für grenzenlosen Reichtum.
         </p>
     </main>
+
+    <script src="shop.js"></script>
+    <script>
+        // Kleinste Änderung, um die Shop-Seite zu öffnen
+        function openShop() {
+            window.location.href = 'shop.html';
+        }
+    </script>
 </body>
 </html>
