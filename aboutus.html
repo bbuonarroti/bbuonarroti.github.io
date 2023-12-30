@@ -12,8 +12,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            position: relative;
-            margin-top: 80px;
         }
         header {
             background-color: #163EFF;
@@ -21,17 +19,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
         }
         h1 {
             margin-top: 20px;
             color: #FFFFFF;
         }
-        .back-button, .product-button, .about-us-button {
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+        .back-button, .buy-now-button {
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
@@ -41,37 +42,36 @@
             cursor: pointer;
             transition: background-color 0.4s;
         }
-        .back-button:hover, .product-button:hover, .about-us-button:hover {
+        .back-button:hover, .buy-now-button:hover {
             background-color: #ef1212;
         }
         .back-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <h1>Über Uns</h1>
-        <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+        <div class="button-container">
+            <button class="back-button" onclick="goToHome()">Zurück</button>
+            <button class="buy-now-button" onclick="openShop()">Jetzt kaufen</button>
+        </div>
     </header>
     
     <main>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Herzlich willkommen bei unserem Online-Shop! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec eleifend lacus. Fusce suscipit urna in congue ultricies. Aenean hendrerit ligula vel elit bibendum, nec congue libero consequat.
         </p>
     </main>
 
-    <script src="shop.js"></script>
     <script>
-        function openShop() {
-            window.location.href = 'index.html';
+        function goToHome() {
+            window.location.href = 'index.html'; // Ändern Sie dies entsprechend dem Dateinamen Ihrer Startseite
         }
 
-        function openAboutUs() {
-            window.location.href = 'aboutus.html';
+        function openShop() {
+            window.location.href = 'shop.html';
         }
     </script>
 </body>
