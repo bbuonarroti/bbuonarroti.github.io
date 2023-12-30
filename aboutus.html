@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Über Uns</title>
     <style>
         body {
             background-color: #00BFFF;
@@ -33,19 +33,20 @@
 </head>
 <body>
     <header>
-        <h1>Willkommen im Shop</h1>
+        <h1>Über Uns</h1>
     </header>
     
     <main>
-        <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
-        <h4>0,5 Liter</h4>
-        <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+        <p>
+            Herzlich willkommen bei unserem Online-Shop! Wir bieten verzauberte Gläser an, aus denen unendlich Wasser fließt. Ein Symbol für grenzenlosen Reichtum und Faszination.
+        </p>
+        <button class="home-button" onclick="openHome()">Zurück zur Startseite</button>
     </main>
 
     <script src="shop.js"></script>
     <script>
-        function openAboutUs() {
-            window.location.href = 'aboutus.html';
+        function openHome() {
+            window.location.href = 'index.html';
         }
     </script>
 </body>
