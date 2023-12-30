@@ -13,19 +13,23 @@
             padding: 0;
             text-align: center;
             position: relative;
+            margin-top: 80px;
         }
         header {
             background-color: #163EFF;
             padding: 10px;
-            position: absolute;
-            top: 0;
-            right: 0;
             display: flex;
-            flex-direction: row;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
         h1 {
             margin-top: 20px;
+            color: #FFFFFF;
         }
         img {
             width: 150px;
@@ -36,7 +40,10 @@
         h4 {
             margin-top: 10px;
         }
-        .product-button, .about-us-button, .back-button {
+        .about-us-button {
+            margin-right: 10px;
+        }
+        .back-button, .product-button, .about-us-button {
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
@@ -46,11 +53,8 @@
             cursor: pointer;
             transition: background-color 0.4s;
         }
-        .product-button:hover, .about-us-button:hover, .back-button:hover {
+        .back-button:hover, .product-button:hover, .about-us-button:hover {
             background-color: #ef1212;
-        }
-        .about-us-button {
-            margin-right: 10px;
         }
         .back-button {
             position: absolute;
@@ -62,11 +66,13 @@
 <body>
     <header>
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+        <h1>Willkommen im Shop</h1>
     </header>
     
     <main>
         <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
         <h4>0,5 Liter</h4>
+        <button class="back-button" onclick="goBack()">Zurück</button>
         <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
     </main>
@@ -75,6 +81,14 @@
     <script>
         function openAboutUs() {
             window.location.href = 'aboutus.html';
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function openShop() {
+            window.location.href = 'index.html';
         }
     </script>
 </body>
