@@ -54,20 +54,20 @@
     <header>
         <h1>Über Uns</h1>
         <div class="button-container">
-            <button class="back-button" onclick="goToHome()">Zurück</button>
+            <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="buy-now-button" onclick="openShop()">Jetzt kaufen</button>
         </div>
     </header>
     
     <main>
         <p>
-            Herzlich willkommen bei unserem Online-Shop! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec eleifend lacus. Fusce suscipit urna in congue ultricies. Aenean hendrerit ligula vel elit bibendum, nec congue libero consequat.
+            Herzlich willkommen bei unserem Online-Shop! Entdecken Sie hochwertige Produkte und erleben Sie einzigartige Shopping-Momente. Unser Engagement für Qualität und Kundenzufriedenheit steht an erster Stelle.
         </p>
     </main>
 
     <script>
-        function goToHome() {
-            window.location.href = 'index.html'; // Ändern Sie dies entsprechend dem Dateinamen Ihrer Startseite
+        function goBack() {
+            window.history.back();
         }
 
         function openShop() {
