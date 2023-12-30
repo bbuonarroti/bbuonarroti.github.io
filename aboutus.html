@@ -12,41 +12,62 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative;
         }
         header {
             background-color: #163EFF;
             padding: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
         }
         h1 {
             margin-top: 20px;
         }
-        img {
-            width: 150px;
-            height: auto;
+        .product-button, .about-us-button, .back-button {
             border-radius: 10px;
-            margin-top: 20px;
+            background-color: #3300ff;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.4s;
         }
-        h4 {
-            margin-top: 10px;
+        .product-button:hover, .about-us-button:hover, .back-button:hover {
+            background-color: #ef1212;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Über Uns</h1>
+        <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
+        <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
     </header>
     
     <main>
+        <h1>Über Uns</h1>
         <p>
-            Herzlich willkommen bei unserem Online-Shop! Wir bieten verzauberte Gläser an, aus denen unendlich Wasser fließt. Ein Symbol für grenzenlosen Reichtum und Faszination.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <button class="home-button" onclick="openHome()">Zurück zur Startseite</button>
     </main>
 
     <script src="shop.js"></script>
     <script>
-        function openHome() {
-            window.location.href = 'index.html';
+        function openShop() {
+            window.location.href = 'shop.html';
+        }
+
+        function openAboutUs() {
+            window.location.href = 'aboutus.html';
         }
     </script>
 </body>

@@ -36,10 +36,7 @@
         h4 {
             margin-top: 10px;
         }
-        .about-us-button {
-            margin-right: 10px;
-        }
-        .back-button {
+        .product-button, .about-us-button, .back-button {
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
@@ -48,12 +45,17 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.4s;
+        }
+        .product-button:hover, .about-us-button:hover, .back-button:hover {
+            background-color: #ef1212;
+        }
+        .about-us-button {
+            margin-right: 10px;
+        }
+        .back-button {
             position: absolute;
             top: 10px;
             left: 10px;
-        }
-        .back-button:hover {
-            background-color: #ef1212;
         }
     </style>
 </head>
@@ -65,17 +67,14 @@
     <main>
         <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
         <h4>0,5 Liter</h4>
-        <button class="back-button" onclick="goBack()">Zurück</button>
+        <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
+        <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
     </main>
 
     <script src="shop.js"></script>
     <script>
         function openAboutUs() {
             window.location.href = 'aboutus.html';
-        }
-
-        function goBack() {
-            window.history.back();
         }
     </script>
 </body>
