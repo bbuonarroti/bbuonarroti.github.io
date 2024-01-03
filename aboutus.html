@@ -4,7 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über Uns</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #00BFFF;
+            color: #00001a;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #163EFF;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #FFFFFF;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+        .back-button, .buy-now-button {
+            border-radius: 10px;
+            background-color: #3300ff;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.4s;
+        }
+        .back-button:hover, .buy-now-button:hover {
+            background-color: #ef1212;
+        }
+        .back-button {
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,6 +65,14 @@
         </p>
     </main>
 
-    <script src="shop.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function openShop() {
+            window.location.href = 'shop.html';
+        }
+    </script>
 </body>
 </html>
