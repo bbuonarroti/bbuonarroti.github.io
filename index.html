@@ -18,6 +18,7 @@
             background-color: #163EFF;
             padding: 10px;
             display: flex;
+            justify-content: space-between; /* Änderung hier */
             align-items: center;
         }
         h1 {
@@ -41,9 +42,9 @@
         .button-container {
             display: flex;
             gap: 10px;
-            align-items: flex-start; /* Änderung hier */
+            align-items: flex-start;
             margin-top: 10px;
-            margin-left: 10px; /* Änderung hier */
+            margin-right: 10px; /* Änderung hier */
         }
         .product-button, .about-us-button, .cart-button {
             border-radius: 10px;
@@ -69,9 +70,9 @@
     <header>
         <h1>Das unendliche Glass Wasser</h1>
         <div class="button-container">
-            <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
-            <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
             <button class="cart-button" onclick="openCart()">🛒</button>
+            <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+            <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         </div>
     </header>
     
