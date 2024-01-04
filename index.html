@@ -18,13 +18,13 @@
             background-color: #163EFF;
             padding: 10px;
             display: flex;
-            flex-direction: column; /* Änderung hier */
-            align-items: center; /* Änderung hier */
+            align-items: center;
         }
         h1 {
-            color: #FFFFFF;
-            font-weight: bold;
             margin-top: 20px;
+            color: #FFFFFF;
+            text-align: left;
+            margin-left: 10px; /* Änderung hier */
         }
         img {
             width: 100%;
@@ -41,13 +41,13 @@
         .button-container {
             display: flex;
             gap: 10px;
-            align-items: center;
-            margin-top: 10px; /* Änderung hier */
+            justify-content: flex-end; /* Änderung hier */
+            margin-top: 10px;
+            margin-right: 10px; /* Änderung hier */
         }
         .product-button, .about-us-button, .cart-button {
-            flex: 1; /* Änderung hier */
             border-radius: 10px;
-            background-color: #3300ff;
+            background-color: #33cc33; /* Änderung hier */
             color: #FFFFFF;
             border: none;
             padding: 10px;
@@ -56,7 +56,7 @@
             transition: background-color 0.4s;
         }
         .product-button:hover, .about-us-button:hover, .cart-button:hover {
-            background-color: #ef1212;
+            background-color: #009900; /* Änderung hier */
         }
         .cart-button {
             background-color: #ff6600;
