@@ -18,8 +18,8 @@
             background-color: #163EFF;
             padding: 10px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column; /* Änderung hier */
+            align-items: center; /* Änderung hier */
         }
         h1 {
             color: #FFFFFF;
@@ -41,12 +41,11 @@
         .button-container {
             display: flex;
             gap: 10px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
             align-items: center;
+            margin-top: 10px; /* Änderung hier */
         }
         .product-button, .about-us-button, .cart-button {
+            flex: 1; /* Änderung hier */
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
