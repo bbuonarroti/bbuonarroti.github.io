@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Uns</title>
+    <title>Warenkorb</title>
     <style>
         body {
             background-color: #00BFFF;
@@ -24,15 +24,11 @@
             margin-top: 20px;
             color: #FFFFFF;
         }
-        p {
-            margin-top: 20px;
-            font-size: 18px;
-        }
         .button-container {
             display: flex;
             gap: 10px;
         }
-        .back-button, .buy-now-button, .cart-button {
+        .back-button, .buy-now-button {
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
@@ -42,41 +38,63 @@
             cursor: pointer;
             transition: background-color 0.4s;
         }
-        .back-button:hover, .buy-now-button:hover, .cart-button:hover {
+        .back-button:hover, .buy-now-button:hover {
             background-color: #ef1212;
         }
         .back-button {
             margin-left: 10px;
         }
+        .cart-item {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .remove-from-cart-button {
+            background-color: #ff3333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+            transition: background-color 0.4s;
+        }
+        .remove-from-cart-button:hover {
+            background-color: #b30000;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Über Uns</h1>
+        <h1>Warenkorb</h1>
         <div class="button-container">
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="buy-now-button" onclick="openShop()">Jetzt kaufen</button>
-            <button class="cart-button" onclick="openCart()">Warenkorb</button>
         </div>
     </header>
     
     <main>
-        <p>
-            Herzlich willkommen bei unserem Online-Shop! Entdecken Sie hochwertige Produkte und erleben Sie einzigartige Shopping-Momente. Unser Engagement für Qualität und Kundenzufriedenheit steht an erster Stelle.
-        </p>
+        <div class="cart-item">
+            <span>Produkt: 0,5 Liter</span>
+            <span>Preis: 5,99 €</span>
+            <button class="remove-from-cart-button" onclick="removeFromCart(1)">Entfernen</button>
+        </div>
     </main>
 
     <script>
         function goBack() {
-            window.location.href = 'index.html';
+            window.history.back();
         }
 
         function openShop() {
             window.location.href = 'shop.html';
         }
 
-        function openCart() {
-            window.location.href = 'cart.html';
+        function removeFromCart(productId) {
+            alert("Produkt wurde aus dem Warenkorb entfernt.");
         }
     </script>
 </body>

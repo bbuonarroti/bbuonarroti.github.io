@@ -37,7 +37,7 @@
             display: flex;
             gap: 10px;
         }
-        .back-button, .about-us-button {
+        .back-button, .about-us-button, .cart-button {
             border-radius: 10px;
             background-color: #3300ff;
             color: #FFFFFF;
@@ -47,11 +47,24 @@
             cursor: pointer;
             transition: background-color 0.4s;
         }
-        .back-button:hover, .about-us-button:hover {
+        .back-button:hover, .about-us-button:hover, .cart-button:hover {
             background-color: #ef1212;
         }
         .back-button {
             margin-left: 10px;
+        }
+        .add-to-cart-button {
+            border-radius: 10px;
+            background-color: #33cc33;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.4s;
+        }
+        .add-to-cart-button:hover {
+            background-color: #009900;
         }
     </style>
 </head>
@@ -61,12 +74,14 @@
         <div class="button-container">
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+            <button class="cart-button" onclick="openCart()">Warenkorb</button>
         </div>
     </header>
     
     <main>
         <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
         <h4>0,5 Liter</h4>
+        <button class="add-to-cart-button" onclick="addToCart()">In den Warenkorb legen</button>
     </main>
 
     <script src="shop.js"></script>
@@ -77,6 +92,16 @@
 
         function openAboutUs() {
             window.location.href = 'aboutus.html';
+        }
+
+        function openCart() {
+            window.location.href = 'cart.html';
+        }
+
+        function addToCart() {
+            // Hier könntest du die Logik implementieren, um das Produkt zum Warenkorb hinzuzufügen.
+            // In dieser einfachen Beispielversion geben wir nur eine Meldung aus.
+            alert("Produkt wurde zum Warenkorb hinzugefügt.");
         }
     </script>
 </body>
