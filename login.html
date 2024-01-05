@@ -13,6 +13,13 @@
             padding: 0;
             text-align: center;
         }
+        header {
+            background-color: #163EFF;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         h1 {
             margin-top: 20px;
             color: #FFFFFF;
@@ -35,7 +42,7 @@
         }
         button {
             border-radius: 10px;
-            background-color: #33cc33;
+            background-color: #3300ff;
             color: #FFFFFF;
             border: none;
             padding: 12px;
@@ -44,12 +51,23 @@
             transition: background-color 0.4s;
         }
         button:hover {
-            background-color: #009900;
+            background-color: #ef1212;
+        }
+        #cart-button {
+            background-color: #ff6600;
         }
     </style>
 </head>
 <body>
-    <h1>Anmelden</h1>
+    <header>
+        <h1>Anmelden</h1>
+        <div class="button-container">
+            <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+            <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
+            <button id="cart-button" onclick="openCart()">🛒</button>
+        </div>
+    </header>
+
     <form id="loginForm">
         <label for="username">Benutzername:</label>
         <input type="text" id="username" required><br>
@@ -61,16 +79,22 @@
     </form>
 
     <script>
+        function openAboutUs() {
+            window.location.href = 'aboutus.html';
+        }
+
+        function openShop() {
+            window.location.href = 'shop.html';
+        }
+
+        function openCart() {
+            window.location.href = 'cart.html';
+        }
+
         function validateLogin() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            if (username === 'nilo' && password === '1234') {
-                alert('Anmeldung erfolgreich!');
-
-            } else {
-                alert('Anmeldung fehlgeschlagen. Überprüfen Sie Benutzername und Passwort.');
-            }
+            // Hier könnten Sie die Anmeldevalidierung durchführen
+            // Dies ist nur ein einfaches Beispiel
+            alert("Anmeldung erfolgreich!");
         }
     </script>
 </body>
