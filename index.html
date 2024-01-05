@@ -68,6 +68,7 @@
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
         <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <button class="cart-button" onclick="openCart()">🛒</button>
+        <div id="login-button-container"></div>
     </div>
 </header>
     <main>
@@ -92,17 +93,18 @@
             window.location.href = 'cart.html';
         }
     </script>
-<div class="login-container">
-    <form id="loginForm" onsubmit="login(event)">
-        <label for="username">Benutzername:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Passwort:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Anmelden</button>
-    </form>
-</div>
-<script src="login.js"></script>
+    <script>
+        // Laden des Login-Buttons
+        const loginButtonContainer = document.getElementById('login-button-container');
+        const loginButtonRequest = new XMLHttpRequest();
+        
+        loginButtonRequest.onload = function () {
+            loginButtonContainer.innerHTML = this.responseText;
+        };
+        
+        loginButtonRequest.open('GET', 'login-button.html', true);
+        loginButtonRequest.send();
+    </script>
+    <script src="login.js"></script>
 </body>
 </html>
