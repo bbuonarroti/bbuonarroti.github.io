@@ -93,18 +93,5 @@
             window.location.href = 'cart.html';
         }
     </script>
-    <script>
-        // Laden des Login-Buttons
-        const loginButtonContainer = document.getElementById('login-button-container');
-        const loginButtonRequest = new XMLHttpRequest();
-        
-        loginButtonRequest.onload = function () {
-            loginButtonContainer.innerHTML = this.responseText;
-        };
-        
-        loginButtonRequest.open('GET', 'login-button.html', true);
-        loginButtonRequest.send();
-    </script>
-    <script src="login.js"></script>
 </body>
 </html>
