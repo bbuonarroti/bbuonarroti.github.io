@@ -65,15 +65,6 @@
 <header>
     <h1>Das unendliche Glass Wasser</h1>
     <div class="button-container">
-        <?php
-        session_start();
-        if (isset($_SESSION["username"])) {
-            echo '<p>Willkommen, ' . $_SESSION["username"] . '!</p>';
-            echo '<a href="logout.php">Abmelden</a>';
-        } else {
-            echo '<button class="login-button" onclick="openLogin()">Anmelden</button>';
-        }
-        ?>
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
         <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <button class="cart-button" onclick="openCart()">🛒</button>
