@@ -97,7 +97,14 @@
         }
 
         function validateLogin() {
-            alert("Anmeldung erfolgreich!");
+            var usernameInput = document.getElementById('username').value;
+            var passwordInput = document.getElementById('password').value;
+
+            if (usernameInput.toLowerCase() === 'wasser' && passwordInput === 'Sui') {
+                alert("Anmeldung erfolgreich!");
+            } else {
+                alert("Falscher Benutzername oder falsches Passwort. Bitte versuchen Sie es erneut.");
+            }
         }
     </script>
 </body>
