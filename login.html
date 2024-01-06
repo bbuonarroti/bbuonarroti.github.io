@@ -62,6 +62,7 @@
     <header>
         <h1>Anmelden</h1>
         <div class="button-container">
+            <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
             <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
             <button id="cart-button" onclick="openCart()">🛒</button>
@@ -79,6 +80,10 @@
     </form>
 
     <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
         function openAboutUs() {
             window.location.href = 'aboutus.html';
         }
