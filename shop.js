@@ -22,7 +22,7 @@ function updateCartDisplay() {
     console.log('Warenkorb aktualisiert:', shoppingCart);
 }
 
-// Selektieren Sie den Button mit der ID "addToCartButton" und fügen Sie einen Event-Listener hinzu
+// Selektieren Sie den Button mit der ID "addToCartButton"
 const addToCartButton = document.getElementById('addToCartButton');
 
 // Überprüfen Sie, ob der Button existiert, bevor Sie einen Event-Listener hinzufügen
