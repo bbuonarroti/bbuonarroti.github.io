@@ -1,32 +1,59 @@
-// shop.js
+<!-- shop.js -->
+<script>
+    function goBack() {
+        window.location.href = 'index.html';
+    }
 
-// Initialisieren Sie den Warenkorb (leeres Array), wenn er nicht bereits existiert
-let shoppingCart = shoppingCart || [];
+    function openAboutUs() {
+        window.location.href = 'aboutus.html';
+    }
 
-// Funktion zum Hinzufügen eines Produkts zum Warenkorb
-function addToCart() {
-    // Fügen Sie das Produktobjekt zum Warenkorb hinzu (z.B., Produktname und Preis)
-    const product = {
-        name: '0,5 Liter',
-        price: 5.99
-    };
-    shoppingCart.push(product);
+    function openCart() {
+        window.location.href = 'cart.html';
+    }
 
-    // Aktualisieren Sie die Anzeige im Warenkorb (optional)
-    updateCartDisplay();
-}
+    function addToCart() {
+        // Hier solltest du die Produktinformationen sammeln, z.B. Produkt-ID, Menge, etc.
+        const productId = '123';
+        const quantity = 1;
 
-// Funktion zum Aktualisieren der Anzeige im Warenkorb (optional)
-function updateCartDisplay() {
-    // Hier können Sie die Darstellung des Warenkorbs aktualisieren (z.B., Anzahl der Produkte)
-    console.log('Warenkorb aktualisiert:', shoppingCart);
-}
+        // API-Anfrage zum Hinzufügen zum Warenkorb
+        fetch('/api/add-to-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ productId, quantity }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Hier kannst du auf die Antwort des Servers reagieren, z.B. eine Bestätigung anzeigen
+            alert('Produkt wurde zum Warenkorb hinzugefügt.');
+        })
+        .catch(error => {
+            console.error('Fehler beim Hinzufügen zum Warenkorb:', error);
+        });
+    }
 
-// Selektieren Sie den Button mit der ID "addToCartButton"
-const addToCartButton = document.getElementById('addToCartButton');
+    function removeFromCart() {
+        // Hier solltest du die Produktinformationen sammeln, z.B. Produkt-ID, Menge, etc.
+        const productId = '123';
 
-// Überprüfen Sie, ob der Button existiert, bevor Sie einen Event-Listener hinzufügen
-if (addToCartButton) {
-    // Fügen Sie einen Event-Listener hinzu, um die Funktion addToCart() aufzurufen, wenn der Button geklickt wird
-    addToCartButton.addEventListener('click', addToCart);
-}
+        // API-Anfrage zum Entfernen aus dem Warenkorb
+        fetch('/api/remove-from-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ productId }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Hier kannst du auf die Antwort des Servers reagieren, z.B. eine Bestätigung anzeigen
+            alert('Produkt wurde aus dem Warenkorb entfernt.');
+        })
+        .catch(error => {
+            console.error('Fehler beim Entfernen aus dem Warenkorb:', error);
+        });
+    }
+</script>
