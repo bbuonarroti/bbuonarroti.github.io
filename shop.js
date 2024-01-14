@@ -1,7 +1,7 @@
 // shop.js
 
 // Überprüfen Sie, ob shoppingCart bereits existiert, andernfalls initialisieren Sie es
-let shoppingCart = shoppingCart || [];
+let shoppingCart = typeof shoppingCart !== 'undefined' ? shoppingCart : [];
 
 // Funktion zum Hinzufügen eines Produkts zum Warenkorb
 function addToCart() {
