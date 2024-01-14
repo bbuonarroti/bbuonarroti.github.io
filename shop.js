@@ -25,7 +25,7 @@ function openCart() {
 }
 
 function addToCart() {
-    const productId = '123';
+    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
     const quantity = 1;
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push({ productId, quantity });
@@ -34,7 +34,7 @@ function addToCart() {
 }
 
 function removeFromCart() {
-    const productId = '123';
+    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart = cart.filter(item => item.productId !== productId);
     localStorage.setItem('cart', JSON.stringify(cart));
