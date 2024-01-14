@@ -12,31 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-function goBack() {
-    window.location.href = 'index.html';
-}
-
-function openAboutUs() {
-    window.location.href = 'aboutus.html';
-}
-
-function openCart() {
-    window.location.href = 'cart.html';
-}
-
 function addToCart() {
-    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
-    const quantity = 1;
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ productId, quantity });
-    localStorage.setItem('cart', JSON.stringify(cart));
     alert('Produkt wurde zum Warenkorb hinzugefügt.');
 }
 
 function removeFromCart() {
-    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.productId !== productId);
-    localStorage.setItem('cart', JSON.stringify(cart));
     alert('Produkt wurde aus dem Warenkorb entfernt.');
 }
