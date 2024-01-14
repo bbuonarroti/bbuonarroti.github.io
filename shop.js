@@ -1,29 +1,46 @@
-// shop.js
-document.addEventListener('DOMContentLoaded', function () {
-    const addToCartButton = document.getElementById('addToCartButton');
-    const removeFromCartButton = document.getElementById('removeFromCartButton');
+// Hier wird der Warenkorb als Array gespeichert
+let shoppingCart = [];
 
-    if (addToCartButton) {
-        addToCartButton.addEventListener('click', addToCart);
-    }
-
-    if (removeFromCartButton) {
-        removeFromCartButton.addEventListener('click', removeFromCart);
-    }
-});
-
+// Funktion zum Hinzufügen eines Produkts zum Warenkorb
 function addToCart() {
-    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(productId);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Produkt wurde zum Warenkorb hinzugefügt.');
+    const product = {
+        name: "Produktname", // Füge hier den tatsächlichen Produktnamen hinzu
+        quantity: 1 // Initialmenge
+    };
+
+    // Füge das Produkt zum Warenkorb hinzu
+    shoppingCart.push(product);
+
+    // Aktualisiere die Anzeige des Warenkorbs
+    updateCartDisplay();
 }
 
-function removeFromCart() {
-    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item !== productId);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Produkt wurde aus dem Warenkorb entfernt.');
+// Funktion zum Entfernen eines Produkts aus dem Warenkorb
+function removeFromCart(index) {
+    // Entferne das Produkt anhand des Index
+    shoppingCart.splice(index, 1);
+
+    // Aktualisiere die Anzeige des Warenkorbs
+    updateCartDisplay();
+}
+
+// Funktion zum Aktualisieren der Warenkorb-Anzeige
+function updateCartDisplay() {
+    const cartList = document.getElementById("cartList");
+
+    // Leere die aktuelle Anzeige
+    cartList.innerHTML = "";
+
+    // Durchlaufe den Warenkorb und füge jedes Produkt zur Anzeige hinzu
+    shoppingCart.forEach((product, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${product.name} x ${product.quantity}`;
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Entfernen";
+        removeButton.addEventListener("click", () => removeFromCart(index));
+
+        listItem.appendChild(removeButton);
+        cartList.appendChild(listItem);
+    });
 }
