@@ -1,59 +1,42 @@
-<!-- shop.js -->
-<script>
-    function goBack() {
-        window.location.href = 'index.html';
+// shop.js
+document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButton = document.getElementById('addToCartButton');
+    const removeFromCartButton = document.getElementById('removeFromCartButton');
+
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', addToCart);
     }
 
-    function openAboutUs() {
-        window.location.href = 'aboutus.html';
+    if (removeFromCartButton) {
+        removeFromCartButton.addEventListener('click', removeFromCart);
     }
+});
 
-    function openCart() {
-        window.location.href = 'cart.html';
-    }
+function goBack() {
+    window.location.href = 'index.html';
+}
 
-    function addToCart() {
-        // Hier solltest du die Produktinformationen sammeln, z.B. Produkt-ID, Menge, etc.
-        const productId = '123';
-        const quantity = 1;
+function openAboutUs() {
+    window.location.href = 'aboutus.html';
+}
 
-        // API-Anfrage zum Hinzufügen zum Warenkorb
-        fetch('/api/add-to-cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ productId, quantity }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Hier kannst du auf die Antwort des Servers reagieren, z.B. eine Bestätigung anzeigen
-            alert('Produkt wurde zum Warenkorb hinzugefügt.');
-        })
-        .catch(error => {
-            console.error('Fehler beim Hinzufügen zum Warenkorb:', error);
-        });
-    }
+function openCart() {
+    window.location.href = 'cart.html';
+}
 
-    function removeFromCart() {
-        // Hier solltest du die Produktinformationen sammeln, z.B. Produkt-ID, Menge, etc.
-        const productId = '123';
+function addToCart() {
+    const productId = '123';
+    const quantity = 1;
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ productId, quantity });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Produkt wurde zum Warenkorb hinzugefügt.');
+}
 
-        // API-Anfrage zum Entfernen aus dem Warenkorb
-        fetch('/api/remove-from-cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ productId }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Hier kannst du auf die Antwort des Servers reagieren, z.B. eine Bestätigung anzeigen
-            alert('Produkt wurde aus dem Warenkorb entfernt.');
-        })
-        .catch(error => {
-            console.error('Fehler beim Entfernen aus dem Warenkorb:', error);
-        });
-    }
-</script>
+function removeFromCart() {
+    const productId = '123';
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.productId !== productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Produkt wurde aus dem Warenkorb entfernt.');
+}
