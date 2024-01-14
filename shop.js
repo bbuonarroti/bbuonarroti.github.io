@@ -13,9 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function addToCart() {
+    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
     alert('Produkt wurde zum Warenkorb hinzugefügt.');
 }
 
 function removeFromCart() {
+    const productId = '123'; // Hier kannst du die Produkt-ID dynamisch setzen
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item !== productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
     alert('Produkt wurde aus dem Warenkorb entfernt.');
 }
