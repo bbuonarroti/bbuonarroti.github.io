@@ -24,22 +24,6 @@
             margin-top: 20px;
             color: #FFFFFF;
         }
-        form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        label {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        input {
-            width: 300px;
-            padding: 10px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
         .button-container {
             display: flex;
             gap: 10px;
@@ -60,7 +44,7 @@
         .back-button {
             margin-left: 10px;
         }
-        .add-to-cart-button {
+        .validateLogin {
             border-radius: 10px;
             background-color: #33cc33;
             color: #FFFFFF;
@@ -70,7 +54,7 @@
             cursor: pointer;
             transition: background-color 0.4s;
         }
-        .add-to-cart-button:hover {
+        .validateLogin:hover {
             background-color: #009900;
         }
         .cart-button {
@@ -88,7 +72,7 @@
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
             <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
-            <button id="cart-button" onclick="openCart()">🛒</button>
+            <button class="cart-button" onclick="openCart()">🛒</button>
         </div>
     </header>
 
@@ -99,7 +83,7 @@
         <label for="password">Passwort:</label>
         <input type="password" id="password" required><br>
 
-        <button type="button" onclick="validateLogin()">Anmelden</button>
+        <button class="validateLogin" onclick="validateLogin()">Anmelden</button>
     </form>
 
     <script>
