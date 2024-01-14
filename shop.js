@@ -1,7 +1,7 @@
 // shop.js
 
-// Initialisieren Sie den Warenkorb (leeres Array)
-let shoppingCart = [];
+// Überprüfen Sie, ob shoppingCart bereits existiert, andernfalls initialisieren Sie es
+let shoppingCart = shoppingCart || [];
 
 // Funktion zum Hinzufügen eines Produkts zum Warenkorb
 function addToCart() {
