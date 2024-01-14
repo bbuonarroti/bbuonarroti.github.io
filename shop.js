@@ -1,5 +1,8 @@
 // shop.js
 
+// Initialisieren Sie den Warenkorb (leeres Array)
+let shoppingCart = [];
+
 // Funktion zum Hinzufügen eines Produkts zum Warenkorb
 function addToCart() {
     // Fügen Sie das Produktobjekt zum Warenkorb hinzu (z.B., Produktname und Preis)
@@ -19,7 +22,7 @@ function updateCartDisplay() {
     console.log('Warenkorb aktualisiert:', shoppingCart);
 }
 
-// Selektieren Sie den Button mit der ID "addToCartButton"
+// Selektieren Sie den Button mit der ID "addToCartButton" und fügen Sie einen Event-Listener hinzu
 const addToCartButton = document.getElementById('addToCartButton');
 
 // Überprüfen Sie, ob der Button existiert, bevor Sie einen Event-Listener hinzufügen
