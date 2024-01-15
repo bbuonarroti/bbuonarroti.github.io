@@ -24,14 +24,6 @@
             justify-content: space-around;
             flex-wrap: wrap;
         }
-        .product-card {
-            width: 200px; 
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
         }
         h1 {
             margin-top: 20px;
@@ -83,6 +75,21 @@
             background-color: #ecedfa;
             font-size: 20px;
             padding: 12px;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap; /* Nicht umbrechen */
+            flex-direction: row; /* In einer Reihe anzeigen */
+            overflow-x: auto; /* Horizontales Scrollen hinzufügen, wenn die Breite zu klein ist */
+        }
+        .product-card {
+            width: 200px; /* oder die gewünschte Breite */
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
     </style>
 </head>
