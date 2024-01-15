@@ -84,10 +84,20 @@
     </header>
     
     <main>
-        <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
-        <h4>0,5 Liter</h4>
-        <button id="addToCartButton" class="add-to-cart-button" onclick="addToCart('0,5 Liter', 5.99, true)">In den Warenkorb legen</button>
-        <p id="priceAndAvailability"></p>
+
+        <div class="product-card">
+            <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
+            <h4>0,5 Liter</h4>
+            <p class="product-price">Preis: 5.99 €</p>
+            <button class="add-to-cart-button" onclick="addToCart('0,5 Liter', 5.99, true)">In den Warenkorb legen</button>
+        </div>
+
+        <div class="product-card">
+            <img src="bilder/dein-bild-2.jpeg" alt="Produktbild 2">
+            <h4>1 Liter</h4>
+            <p class="product-price">Preis: 9.99 €</p>
+            <button class="add-to-cart-button" onclick="addToCart('1 Liter', 9.99, true)">In den Warenkorb legen</button>
+        </div>
     </main>
 
     <script src="shop.js"></script>
