@@ -18,28 +18,26 @@
             background-color: #163EFF;
             padding: 10px;
             display: flex;
-            justify-content: space-between; 
+            justify-content: space-between;
             align-items: center;
         }
-        h1 {
-            margin-top: 20px;
-            color: #FFFFFF;
-            text-align: left;
-            margin-left: 10px;
-            display: flex; /* Damit das Logo und die Überschrift horizontal aligniert werden können */
-            align-items: center; /* Vertical alignment für die Überschrift und das Logo */
-        }
         img.logo {
-            width: 100%;
-            max-width: 300px;
+            width: 50px; /* Hier die gewünschte Breite des Logos einstellen (doppelte Größe) */
             height: auto;
             border-radius: 10px;
-            margin-right: 10px; /* Abstand zwischen Logo und Überschrift anpassen */
+            margin-left: 10px; /* Abstand zum linken Rand anpassen */
             animation: floatAnimation 2s infinite alternate;
         }
         p {
             font-size: 20px;
             margin-top: 20px;
+        }
+        img.main-image {
+            width: 15%; /* Hier die gewünschte Breite des Hauptbildes einstellen */
+            height: auto;
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px; /* Abrundung der Ecken beibehalten */
         }
         .button-container {
             display: flex;
@@ -67,10 +65,7 @@
 </head>
 <body>
   <header>
-    <h1>
-        Das unendliche Glass Wasser
-        <img src="bilder/9RVT3v-LogoMakr.png" alt="" class="logo">
-    </h1>
+    <img src="bilder/9RVT3v-LogoMakr.png" alt="" class="logo">
     <div class="button-container">
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
         <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
@@ -78,31 +73,31 @@
         <button class="cart-button" onclick="openCart()">🛒</button>
     </div>
 </header>
-    <main>
-        <img src="bilder/klarglas-mit-wasser.jpg" alt="Unendliches Glas mit Wasser">
-        <p>
-            Ein verzaubertes Glas, aus dem unendlich Wasser fließt – klar wie ein Diamant, stetig sprudelnd aus einer mysteriösen, endlosen Quelle. <br>
-            Ein fesselndes Symbol für grenzenlosen Reichtum.
-        </p>
-    </main>
+<main>
+    <img src="bilder/klarglas-mit-wasser.jpg" alt="Unendliches Glas mit Wasser" class="main-image">
+    <p>
+        Ein verzaubertes Glas, aus dem unendlich Wasser fließt – klar wie ein Diamant, stetig sprudelnd aus einer mysteriösen, endlosen Quelle. <br>
+        Ein fesselndes Symbol für grenzenlosen Reichtum.
+    </p>
+</main>
 
-    <script src="shop.js"></script>
-    <script>
-        function openShop() {
-            window.location.href = 'shop.html';
-        }
+<script src="shop.js"></script>
+<script>
+    function openShop() {
+        window.location.href = 'shop.html';
+    }
 
-        function openAboutUs() {
-            window.location.href = 'aboutus.html';
-        }
+    function openAboutUs() {
+        window.location.href = 'aboutus.html';
+    }
 
-        function openLogin() {
+    function openLogin() {
         window.location.href = 'login.html';
     }
 
-        function openCart() {
-            window.location.href = 'cart.html';
-        }
-    </script>
+    function openCart() {
+        window.location.href = 'cart.html';
+    }
+</script>
 </body>
 </html>
