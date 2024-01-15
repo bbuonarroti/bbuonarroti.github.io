@@ -18,30 +18,25 @@
             background-color: #163EFF;
             padding: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
         }
         img.logo {
-            width: 50px; /* Hier die gewünschte Breite des Logos einstellen (doppelte Größe) */
+            width: 50px;
             height: auto;
             border-radius: 10px;
-            margin-left: 10px; /* Abstand zum linken Rand anpassen */
             animation: floatAnimation 2s infinite alternate;
         }
-        p {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-        img.main-image {
-            width: 15%; /* Hier die gewünschte Breite des Hauptbildes einstellen */
-            height: auto;
-            max-width: 100%;
-            margin-top: 20px;
-            border-radius: 10px; /* Abrundung der Ecken beibehalten */
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            margin-left: 10px;
+            margin-right: auto;
+            color: #ffffff; /* Weiße Farbe für die Überschrift */
         }
         .button-container {
             display: flex;
             gap: 10px;
+            margin-left: auto;
         }
         .product-button, .about-us-button, .login-button, .cart-button {
             border-radius: 10px;
@@ -61,43 +56,51 @@
             font-size: 20px;
             padding: 12px 20px;
         }
+        img.main-image {
+            width: 17%;
+            height: auto;
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
   <header>
     <img src="bilder/9RVT3v-LogoMakr.png" alt="" class="logo">
+    <h1>Das unendliche Glass Wasser</h1>
     <div class="button-container">
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
         <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <button class="login-button" onclick="openLogin()">Login</button>
         <button class="cart-button" onclick="openCart()">🛒</button>
     </div>
-</header>
-<main>
+  </header>
+  <main>
     <img src="bilder/klarglas-mit-wasser.jpg" alt="Unendliches Glas mit Wasser" class="main-image">
     <p>
         Ein verzaubertes Glas, aus dem unendlich Wasser fließt – klar wie ein Diamant, stetig sprudelnd aus einer mysteriösen, endlosen Quelle. <br>
         Ein fesselndes Symbol für grenzenlosen Reichtum.
     </p>
-</main>
+  </main>
 
-<script src="shop.js"></script>
-<script>
-    function openShop() {
-        window.location.href = 'shop.html';
-    }
+  <script src="shop.js"></script>
+  <script>
+      function openShop() {
+          window.location.href = 'shop.html';
+      }
 
-    function openAboutUs() {
-        window.location.href = 'aboutus.html';
-    }
+      function openAboutUs() {
+          window.location.href = 'aboutus.html';
+      }
 
-    function openLogin() {
-        window.location.href = 'login.html';
-    }
+      function openLogin() {
+          window.location.href = 'login.html';
+      }
 
-    function openCart() {
-        window.location.href = 'cart.html';
-    }
-</script>
+      function openCart() {
+          window.location.href = 'cart.html';
+      }
+  </script>
 </body>
 </html>
