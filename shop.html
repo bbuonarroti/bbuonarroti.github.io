@@ -86,8 +86,8 @@
     <main>
         <img src="bilder/wepik-export-20231209072552hu6K.jpeg" alt="Produktbild">
         <h4>0,5 Liter</h4>
-<button id="addToCartButton" class="add-to-cart-button">In den Warenkorb legen</button>
-
+        <button id="addToCartButton" class="add-to-cart-button" onclick="addToCart('0,5 Liter', 5.99, true)">In den Warenkorb legen</button>
+        <p id="priceAndAvailability"></p>
     </main>
 
     <script src="shop.js"></script>
@@ -102,10 +102,6 @@
 
         function openCart() {
             window.location.href = 'cart.html';
-        }
-
-        function addToCart() {
-            alert("Produkt wurde zum Warenkorb hinzugefügt.");
         }
     </script>
 </body>
