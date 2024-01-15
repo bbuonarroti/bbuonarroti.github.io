@@ -1,4 +1,5 @@
 let shoppingCart = [];
+let notificationList = [];
 
 function addToCart(productName, price, inStock) {
     if (inStock) {
@@ -26,9 +27,12 @@ function displayNotification(message) {
     notification.textContent = message;
     document.body.appendChild(notification);
 
+    notificationList.push(notification);
+
     // Schließe die Benachrichtigung nach 3 Sekunden
     setTimeout(() => {
         document.body.removeChild(notification);
+        notificationList.shift(); // Entferne die älteste Benachrichtigung aus der Liste
     }, 3000);
 }
 
@@ -44,6 +48,7 @@ function displayOutOfStockAlert(productName) {
     alert(`Das Produkt "${productName}" ist nicht auf Lager.`);
 }
 
+// Restlicher Code bleibt unverändert
 
 
 
