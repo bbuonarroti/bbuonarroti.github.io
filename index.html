@@ -26,13 +26,15 @@
             color: #FFFFFF;
             text-align: left;
             margin-left: 10px;
+            display: flex; /* Damit das Logo und die Überschrift horizontal aligniert werden können */
+            align-items: center; /* Vertical alignment für die Überschrift und das Logo */
         }
-        img {
+        img.logo {
             width: 100%;
             max-width: 300px;
             height: auto;
             border-radius: 10px;
-            margin-top: 20px;
+            margin-right: 10px; /* Abstand zwischen Logo und Überschrift anpassen */
             animation: floatAnimation 2s infinite alternate;
         }
         p {
@@ -62,15 +64,19 @@
             padding: 12px 20px;
         }
     </style>
-<header>
-    <h1>Das unendliche Glass Wasser</h1>
+</head>
+<body>
+  <header>
+    <h1>
+        Das unendliche Glass Wasser
+        <img src="bilder/9RVT3v-LogoMakr.png" alt="" class="logo">
+    </h1>
     <div class="button-container">
         <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
         <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
         <button class="login-button" onclick="openLogin()">Login</button>
         <button class="cart-button" onclick="openCart()">🛒</button>
     </div>
-    <img src="bilder/9RVT3v-LogoMakr.png" alt="">
 </header>
     <main>
         <img src="bilder/klarglas-mit-wasser.jpg" alt="Unendliches Glas mit Wasser">
