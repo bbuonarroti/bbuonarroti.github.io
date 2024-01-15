@@ -8,9 +8,13 @@ function addToCart(productName, price, inStock) {
             quantity: 1
         };
 
-        shoppingCart.push(product);
-        updateCartDisplay();
-        displayPurchaseAlert(productName, price);
+        if (shoppingCart.length < 4) {
+            shoppingCart.push(product);
+            updateCartDisplay();
+            displayPurchaseAlert(productName, price);
+        } else {
+            displayMaxProductsAlert();
+        }
     } else {
         displayOutOfStockAlert(productName);
     }
@@ -18,6 +22,10 @@ function addToCart(productName, price, inStock) {
 
 function displayPurchaseAlert(productName, price) {
     alert(`Produkt: ${productName}\nPreis: ${price.toFixed(2)} €\nProdukt wurde zum Warenkorb hinzugefügt.`);
+}
+
+function displayMaxProductsAlert() {
+    alert("Sie können maximal vier Produkte gleichzeitig in den Warenkorb legen.");
 }
 
 function displayOutOfStockAlert(productName) {
