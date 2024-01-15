@@ -11,13 +11,25 @@ function addToCart(productName, price, inStock) {
         if (shoppingCart.length < 4) {
             shoppingCart.push(product);
             updateCartDisplay();
-            displayPurchaseAlert(productName, price);
+            displayNotification(`${productName} wurde zum Warenkorb hinzugefügt.`);
         } else {
             displayMaxProductsAlert();
         }
     } else {
         displayOutOfStockAlert(productName);
     }
+}
+
+function displayNotification(message) {
+    const notification = document.createElement("div");
+    notification.className = "notification";
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Schließe die Benachrichtigung nach 3 Sekunden
+    setTimeout(() => {
+        document.body.removeChild(notification);
+    }, 3000);
 }
 
 function displayPurchaseAlert(productName, price) {
@@ -31,6 +43,9 @@ function displayMaxProductsAlert() {
 function displayOutOfStockAlert(productName) {
     alert(`Das Produkt "${productName}" ist nicht auf Lager.`);
 }
+
+
+
 
 function removeFromCart(index) {
     shoppingCart.splice(index, 1);
