@@ -26,6 +26,7 @@ img.logo {
 link[rel="icon"] {
     width: 16px;
     height: 16px;
+    border-radius: 5px; /* Beispiel für einen abgerundeten Rand */
 }
 
 h1 {
