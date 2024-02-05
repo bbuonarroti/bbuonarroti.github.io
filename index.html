@@ -31,14 +31,22 @@
             margin-top: 20px;
             border-radius: 10px;
         }
-        .google-map {
-            margin-top: 20px; /* Abstand nach oben anpassen, um Platz für die Karte zu schaffen */
-            width: 400px; /* Volle Breite verwenden */
-            height: 250px; /* Höhe der Karte anpassen */
-            border: 0;
+        .google-map, .youtube-video {
+            width: 50%; /* 50% der Container-Breite */
+            height: 400px;
+            margin-top: 20px;
+            box-sizing: border-box; /* Box-Sizing für korrekte Breite inklusive Padding und Border */
+        }
+        .content-container {
+            display: flex; /* Flexbox-Container */
+            justify-content: space-between; /* Platz zwischen den Elementen */
+            align-items: flex-start; /* Oben ausrichten */
+            text-align: center;
+            flex-wrap: wrap; /* Elemente bei Bedarf umwickeln */
         }
         main p {
-            margin-bottom: 10px; /* Ändere den Wert nach Bedarf */
+            margin-bottom: 10px;
+            width: 100%; /* 100% der Container-Breite für den Text */
         }
     </style>
 </head>
@@ -59,7 +67,10 @@
         Ein verzaubertes Glas, aus dem unendlich Wasser fließt – klar wie ein Diamant, stetig sprudelnd aus einer mysteriösen, endlosen Quelle. <br>
         Ein fesselndes Symbol für grenzenlosen Reichtum.
     </p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5325.809556950655!2d11.55567031366228!3d48.13135967852688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf50d5283a2f%3A0x62dbd2944893f89!2sStaatl.%20Theresiengymnasium%20M%C3%BCnchen%2C%20Ausbildungsrichtung%3A%20SG%3B%20HG!5e0!3m2!1sde!2sde!4v1707153864130!5m2!1sde!2sde" class="google-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="content-container">
+        <iframe src="https://www.youtube.com/embed/siN7p6s9HWM?si=FpdXJjFR1p517KPV" class="youtube-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5325.809556950655!2d11.55567031366228!3d48.13135967852688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf50d5283a2f%3A0x62dbd2944893f89!2sStaatl.%20Theresiengymnasium%20M%C3%BCnchen%2C%20Ausbildungsrichtung%3A%20SG%3B%20HG!5e0!3m2!1sde!2sde!4v1707153864130!5m2!1sde!2sde" class="google-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </main>
   <script src="shop.js"></script>
   <script>
