@@ -30,6 +30,7 @@ link[rel="icon"] {
 }
 
 h1 {
+    text-shadow: 2px 2px 2px black;
     margin: 0;
     font-size: 24px;
     margin-left: 10px;
