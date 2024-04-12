@@ -22,11 +22,11 @@ img.logo {
     animation: floatAnimation 2s infinite alternate;
 }
 
-/* Favicon-Stil hinzufügen */
+
 link[rel="icon"] {
     width: 16px;
     height: 16px;
-    border-radius: 5px; /* Beispiel für einen abgerundeten Rand */
+    border-radius: 5px; 
 }
 
 h1 {
@@ -44,8 +44,8 @@ h1 {
     margin-left: auto;
 }
 
-/* Weitere gemeinsame Stile hier */
+
 
 @keyframes floatAnimation {
-    /* Animation definieren, falls erforderlich */
+  
 }
