@@ -1,0 +1,32 @@
+body{
+    background-color: #efefef;
+    font-family: 'Montserrat' „sans-serif;
+    }
+    .container{
+    width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    }
+     
+    .container h1 {
+        color: blueviolet;
+    }
+    .container header{
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        margin-top: 50px;
+    }
+    .container header .shopping{
+        position: relative;
+        text-align: right;
+    }
+    .shopping i{
+        font-size: 3rem;
+        color: blueviolet;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
