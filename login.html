@@ -6,7 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .back-button, .about-us-button, .cart-button, .product-button {
+        .back-button, .about-us-button,  .product-button {
             box-shadow: 4px 4px 4px black;
             border-radius: 10px;
             background-color: #3300ff;
@@ -59,11 +59,6 @@
         .validateLogin:hover {
             background-color: #009900;
         }
-        .cart-button {
-            background-color: #ecedfa;
-            font-size: 20px;
-            padding: 12px;
-        }
         .hallo-container {
            flex-direction: column;
             
@@ -78,7 +73,6 @@
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
             <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
-            <button class="cart-button" onclick="openCart()">🛒</button>
         </div>
     </header>
 
@@ -109,9 +103,6 @@
             window.location.href = 'shop.html';
         }
 
-        function openCart() {
-            window.location.href = 'cart.html';
-        }
 
         function validateLogin() {
             var usernameInput = document.getElementById('username').value;

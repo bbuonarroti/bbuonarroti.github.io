@@ -15,7 +15,7 @@
         border-radius: 10px;
         margin-top: 20px;
     }
-        .back-button, .about-us-button, .cart-button {
+        .back-button, .about-us-button {
             box-shadow: 4px 4px 4px black;
             border-radius: 10px;
             background-color: #3300ff;
@@ -26,7 +26,7 @@
             cursor: pointer;
             transition: background-color 0.4s;
         }
-        .back-button:hover, .about-us-button:hover, .cart-button:hover {
+        .back-button:hover, .about-us-button:hover  {
             background-color: #ef1212;
         }
         .back-button {
@@ -44,11 +44,6 @@
         }
         .add-to-cart-button:hover {
             background-color: #009900;
-        }
-        .cart-button {
-            background-color: #ecedfa;
-            font-size: 20px;
-            padding: 12px;
         }
         main {
             display: flex;
@@ -85,7 +80,6 @@
         <div class="button-container">
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
-            <button class="cart-button" onclick="openCart()">🛒</button>
         </div>
     </header>
     
@@ -129,9 +123,6 @@
             window.location.href = 'aboutus.html';
         }
 
-        function openCart() {
-            window.location.href = 'cart.html';
-        }
     </script>
 </body>
 </html>

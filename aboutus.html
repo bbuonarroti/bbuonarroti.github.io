@@ -7,7 +7,7 @@
     <title>Über Uns</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .back-button,.cart-button,.product-button {
+        .back-button, .product-button {
             box-shadow: 4px 4px 4px black;
             border-radius: 10px;
             background-color: #3300ff;
@@ -22,11 +22,6 @@
         .back-button:hover,
         .product-button:hover {
             background-color: #ef1212;
-        }
-        .cart-button {
-            background-color: #ecedfa;
-            font-size: 20px;
-            padding: 12px;
         }
 
         .back-button {
@@ -61,7 +56,6 @@
         <div class="button-container">
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="product-button" onclick="openShop()">Jetzt kaufen</button>
-            <button class="cart-button" onclick="openCart()">🛒</button>
         </div>
     </header>
 
@@ -94,10 +88,6 @@
 
         function openShop() {
             window.location.href = 'shop.html';
-        }
-
-        function openCart() {
-            window.location.href = 'cart.html';
         }
     </script>
 </body>
