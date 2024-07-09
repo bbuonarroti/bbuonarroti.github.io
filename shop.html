@@ -10,12 +10,12 @@
             margin-top: 10px;
         }
         img.main-image {
-        width: 150px;
-        height: auto;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
-        .back-button, .about-us-button {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .back-button, .about-us-button, .cart-icon {
             box-shadow: 4px 4px 4px black;
             border-radius: 10px;
             background-color: #3300ff;
@@ -24,9 +24,9 @@
             padding: 10px;
             font-size: 20px;
             cursor: pointer;
-            transition: background-color 0.4s;
+            transition: background-color 0.4s, transform 0.3s;
         }
-        .back-button:hover, .about-us-button:hover  {
+        .back-button:hover, .about-us-button:hover, .cart-icon:hover {
             background-color: #ef1212;
         }
         .back-button {
@@ -61,16 +61,97 @@
             border-radius: 10px;
         }
         .notification {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
-}
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .cart-icon {
+            cursor: pointer;
+            z-index: 1000;
+            padding: 10px 20px;
+            margin-left: 20px;
+        }
+        .cart-icon img {
+            width: 30px;
+        }
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+        .cart-sidebar {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            transition: right 0.3s;
+            overflow-y: auto;
+            padding: 20px;
+            z-index: 1000;
+        }
+        .cart-sidebar.open {
+            right: 0;
+        }
+        .cart-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-item-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .cart-total {
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+        .close-btn {
+            background-color: #3300ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 10px 0;
+        }
+        .close-btn:hover {
+            background-color: #ef1212;
+        }
+        .quantity-btn {
+            background-color: #33cc33;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+        }
+        .quantity-btn:hover {
+            background-color: #009900;
+        }
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +161,10 @@
         <div class="button-container">
             <button class="back-button" onclick="goBack()">Zurück</button>
             <button class="about-us-button" onclick="openAboutUs()">Über Uns</button>
+            <div class="cart-icon" onclick="toggleCart()">
+                <img src="img/cart-icon.png" alt="Warenkorb">
+                <span id="cart-count" class="cart-count">0</span>
+            </div>
         </div>
     </header>
     
@@ -113,6 +198,12 @@
         </div>
     </main>
 
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h2>Einkaufswagen</h2>
+        <button class="close-btn" onclick="toggleCart()">Schließen</button>
+        <div id="cart"></div>
+    </div>
+
     <script src="shop.js"></script>
     <script>
         function goBack() {
@@ -123,6 +214,90 @@
             window.location.href = 'aboutus.html';
         }
 
+        const products = [
+            { name: '0,5 Liter', price: 5.99 },
+            { name: '1 Liter', price: 7.49 },
+            { name: '1 Liter', price: 9.99 },
+            { name: '1,5 Liter', price: 12.99 }
+        ];
+
+        let cart = [];
+
+        function addToCart(productName, price, quantity) {
+            let cartItem = cart.find(item => item.name === productName);
+
+            if (cartItem) {
+                cartItem.quantity++;
+            } else {
+                cartItem = { name: productName, price: price, quantity: 1 };
+                cart.push(cartItem);
+            }
+
+            updateCartCount();
+            displayCart();
+        }
+
+        function updateCartCount() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        function displayCart() {
+            const cartDiv = document.getElementById('cart');
+            cartDiv.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>${item.price.toFixed(2)} €</span>
+                    <div class="cart-item-buttons">
+                        <button class="quantity-btn" onclick="decrementItem('${item.name}')">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn" onclick="incrementItem('${item.name}')">+</button>
+                    </div>
+                `;
+                cartDiv.appendChild(itemDiv);
+                total += item.price * item.quantity;
+            });
+
+            const totalDiv = document.createElement('div');
+            totalDiv.className = 'cart-total';
+            totalDiv.textContent = `Gesamt: ${total.toFixed(2)} €`;
+            cartDiv.appendChild(totalDiv);
+        }
+
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            cartSidebar.classList.toggle('open');
+        }
+
+        function incrementItem(productName) {
+            const cartItem = cart.find(item => item.name === productName);
+            if (cartItem) {
+                cartItem.quantity++;
+                updateCartCount();
+                displayCart();
+            }
+        }
+
+        function decrementItem(productName) {
+            const cartItem = cart.find(item => item.name === productName);
+            if (cartItem && cartItem.quantity > 1) {
+                cartItem.quantity--;
+                updateCartCount();
+                displayCart();
+            } else if (cartItem && cartItem.quantity === 1) {
+                const index = cart.indexOf(cartItem);
+                if (index !== -1) {
+                    cart.splice(index, 1);
+                    updateCartCount();
+                    displayCart();
+                }
+            }
+        }
     </script>
 </body>
 </html>
